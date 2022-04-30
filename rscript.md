@@ -5,18 +5,18 @@
 _**Data license.**
 The dataset has been made available by Motivate International Inc. under this **[license](https://ride.divvybikes.com/data-license-agreement)**. Used for educational purposes only, not sponsored. As per the license, this data will be used as source material, as applicable, in analyses, reports, or studies published or distributed for non-commercial purposes._
 
+---
+
+
+
 ```{r}
 #Install packages
 
 install.packages("tidyverse") #data import and visualise
 install.packages("lubridate")  #date functions
-install.packages("ggplot") #visualise data
-install.packages("dplyr")
 install.packages("skimr")
 library(tidyverse)
 library(lubridate)
-library(ggplot2)
-library(dplyr)
 library(skimr)
 
 # STEP 1: COLLECT DATA
@@ -26,6 +26,7 @@ q2_2019 <- read_csv("Bikeshare_Trips_2019_Q2.csv")
 q3_2019 <- read_csv("Bikeshare_Trips_2019_Q3.csv")
 q4_2019 <- read_csv("Bikeshare_Trips_2019_Q4.csv")
 q1_2020 <- read_csv("Bikeshare_Trips_2020_Q1.csv")
+
 
 # STEP 2: DATA INTEGRITY
 #======================================================
@@ -227,3 +228,4 @@ all_trips_v2 %>%
     caption="Data source : The dataset has been made available by Motivate International Inc. for educational purposes only")+
   theme(plot.title = element_text(size = 14, face="bold"), plot.subtitle= element_text(colour="grey"), plot.caption = element_text(hjust=1, face="italic"))+
   scale_fill_hue()
+```
