@@ -1,1 +1,0 @@
-# case-study_cyclistic
