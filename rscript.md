@@ -228,4 +228,15 @@ all_trips_v2 %>%
     caption="Data source : The dataset has been made available by Motivate International Inc. for educational purposes only")+
   theme(plot.title = element_text(size = 14, face="bold"), plot.subtitle= element_text(colour="grey"), plot.caption = element_text(hjust=1, face="italic"))+
   scale_fill_hue()
-```
+
+
+eliminated_outliers %>% 
+  group_by(member_casual) %>%
+  ggplot(aes(x = ride_minute, color=member_casual)) +
+  geom_freqpoly() +
+  facet_wrap(~member_casual)+
+  labs(
+    title ="The difference of ride length (in minutes) for each type of user", subtitle ="Includes data from 2019 - Q2, Q3, Q4 and 2020 - Q1", 
+    caption="Data source : The dataset has been made available by Motivate International Inc. for educational purposes only")+
+  theme(plot.title = element_text(size = 14, face="bold"), plot.subtitle= element_text(colour="grey"), plot.caption = element_text(hjust=1, face="italic"))
+  ```
